@@ -1,5 +1,6 @@
 tasks:
-  - command: mvn package && java -jar target/dependency/webapp-runner.jar target/*.war
+  - init: mvn install -DskipTests=false && make
+  - command: make
 ports:
   - port: 8080
     onOpen: open-preview
